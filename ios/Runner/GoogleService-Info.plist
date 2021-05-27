@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>694597329981-ffp2r20voi5hbgmr1la8c2j21jhn7hhg.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.694597329981-ffp2r20voi5hbgmr1la8c2j21jhn7hhg</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>694597329981-8v67tnmd0gst3tu4gd31pvsbeu9q7ktk.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDiKLJ7FrFlZSFZdXkbX9SLR_uRFGj0JNI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>694597329981</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.indianapp</string>
+	<key>PROJECT_ID</key>
+	<string>khelbuddy-c2e8d</string>
+	<key>STORAGE_BUCKET</key>
+	<string>khelbuddy-c2e8d.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:694597329981:ios:5ab2f7d632e0d93c54f654</string>
+	<key>DATABASE_URL</key>
+	<string>https://khelbuddy-c2e8d.firebaseio.com</string>
+</dict>
+</plist>

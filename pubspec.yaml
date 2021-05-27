@@ -1,0 +1,160 @@
+name: indianapp
+description: A new Flutter application.
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^0.1.3
+  location:
+  camera:
+  path_provider:
+  path:
+  image_ink_well:
+  progress_dialog:
+  chips_choice:
+  google_maps_flutter:
+  http:
+  sliding_up_panel:
+  firebase_core:
+  firebase_analytics:
+  firebase_auth: ^0.18.4+1
+  cloud_firestore: ^0.14.4
+  firebase_storage:
+  firebase_messaging: ^7.0.3
+  age:
+  geocoder:
+  pin_code_fields:
+  flutter_facebook_login:
+  google_sign_in:
+  google_fonts:
+  flutter_styled_toast:
+  angles:
+  flutter_local_notifications:
+  image_picker:
+  share:
+  flutter_launcher_icons:
+  carousel_slider:
+  flutter_svg:
+  url_launcher:
+  store_redirect:
+  shared_preferences:
+  font_awesome_flutter:
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon.png"
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/images/Busuu_Logo.png
+    - assets/images/maps.png
+    - assets/images/facebook-icon.png
+    - assets/images/google-icon.png
+    - assets/images/marker.png
+    - assets/images/marker-online.png
+    - assets/images/marker-offline.png
+    - assets/images/cricket-marker.png
+    - assets/images/marker-cricket.png
+    - assets/images/img1.png
+    - assets/images/img2.png
+    - assets/images/img3.png
+    - assets/images/selfie.png
+    - assets/images/iiii.png
+    - assets/mapstyle.txt
+    - assets/images/khelbuddy-logo.png
+    - assets/images/no_request_found.png
+    - assets/images/emptyinbox.png
+    - assets/images/marker.gif
+    - assets/images/loading_card.gif
+    - assets/images/no_result.gif
+    - assets/images/gender.png
+    - assets/images/language-solid.svg
+    - assets/icon.png
+    - assets/images/vip.png
+    - assets/maker-lawntennis.png
+    - assets/maker-lawntennis2.png
+    - assets/marker-billiards2.png
+    - assets/current.png
+    - assets/bb.png
+    - assets/images/markercopy.png
+    - assets/images/marker-cricket3.png
+    - assets/images/idproof.png
+    - assets/markers/m1.png
+    - assets/markers/m2.png
+    - assets/markers/m3.png
+    - assets/markers/m4.png
+    - assets/markers/m5.png
+    - assets/markers/m6.png
+    - assets/markers/m7.png
+    - assets/markers/m8.png
+    - assets/markers/m9.png
+    - assets/markers/m10.png
+    - assets/markers/m11.png
+    - assets/markers/m12.png
+    - assets/markers/m13.png
+    - assets/markers/m14.png
+    - assets/markers/m15.png
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware.
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
