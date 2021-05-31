@@ -9,8 +9,7 @@ class InterestModel {
   bool isSelected;
   bool isDisabled;
 
-  InterestModel(this.imageUrl, this.title, this.colorCode, this.icon,
-      {this.isSelected, this.isDisabled, this.interestID});
+  InterestModel(this.imageUrl, this.title, this.colorCode, this.icon, {this.isSelected, this.isDisabled, this.interestID});
 
   Color parseColor() {
     return Color(int.parse(colorCode));

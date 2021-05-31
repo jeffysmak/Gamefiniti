@@ -98,7 +98,6 @@ class _HomeScreenState extends State<HomeScreen> {
         setState(() {
           nearbyRequests.add(request);
         });
-
         // request marker
         BitmapDescriptor.fromAssetImage(ImageConfiguration(devicePixelRatio: 2.5), getImageNameByInterest(request.interests)).then((onValue) {
           setState(() {

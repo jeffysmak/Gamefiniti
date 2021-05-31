@@ -62,8 +62,9 @@ class _GroupDetailScreenState extends State<GroupDetailScreen> {
 
   void shareGroupRefCode() {
     Share.share(
-        'Hey! Checkout this Khel Buddy app, join our ${groupInterest.title} group and start doing things together.\nGroup Code : ${group.inviteCode}',
-        subject: 'Khel Buddy Group Invite Code');
+      'Hey! Checkout this Khel Buddy app, join our ${groupInterest.title} group and start doing things together.\nGroup Code : ${group.inviteCode}',
+      subject: 'Gamefiniti Group Invite Code',
+    );
   }
 
   Widget _appBar() {

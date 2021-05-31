@@ -31,27 +31,16 @@ class FirestoreHelper {
   static final String KEY_Groups = 'Groups';
   static final String KEY_CommunityGroups = 'CommunityGroups';
   static final String KEY_Interests = 'Interests';
-
   static final String QUERY_EMAIL = 'email';
   static final String QUERY_PHONE = 'phone';
 
   // to check user already existance
   static void checkUserAlreadyExist(AppUser user, Function callback, String query) async {
     FirebaseFirestore firestore = FirebaseFirestore.instance;
-
     CollectionReference USERS_COLLECTION = firestore.collection(KEY_USERS);
-
     Query q = USERS_COLLECTION.where(query, isEqualTo: query == QUERY_EMAIL ? user.email : user.phone);
-
     QuerySnapshot qs = await q.get();
-
     callback.call((qs.docs != null && qs.docs.length > 0));
-
-//    DocumentReference USER_REFRENCE = USERS_COLLECTION.doc(user.provider == 'Phone' ? user.phone : user.email);
-//
-//    DocumentSnapshot userSnap = await USER_REFRENCE.get();
-//
-//    callback.call(userSnap.exists);
   }
 
   static void clearData(AppUser user) async {
@@ -70,7 +59,9 @@ class FirestoreHelper {
 
     DocumentReference USER = USERS_COLLECTION.doc(user.email);
 
-    USER.update(user.toMap()).whenComplete(() => onCompleteCallback.call());
+    print(user.email);
+
+    USER.set(user.toMap()).whenComplete(() => onCompleteCallback.call());
 
     Common.signedInUser = user;
   }
@@ -89,6 +80,8 @@ class FirestoreHelper {
     DocumentReference USER = USERS_COLLECTION.doc((user.email != null && user.email.length > 0) ? user.email : user.phoneNumber);
 
     DocumentSnapshot userData = await USER.get();
+
+    print('HERE -> ${userData.data().toString()}');
 
     AppUser signedInUser = AppUser.fromMap(userData.data());
 
@@ -180,9 +173,9 @@ class FirestoreHelper {
         debugPrint(doc.data().toString());
         PostActivity request = PostActivity.fromMap(doc.data());
 
-        debugPrint((doc.data() as Map)['userID'].toString());
+        debugPrint((doc.data())['userID'].toString());
 
-        if ((doc.data() as Map)['userID'] != signedInUser.email) {
+        if ((doc.data())['userID'] != signedInUser.email) {
           if (request.interests.contains(",")) {
             List<String> requestInterests = request.interests.split(",");
             for (String interest in requestInterests) {

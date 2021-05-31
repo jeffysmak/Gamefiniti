@@ -35,9 +35,8 @@ class FirebaseStorageHelper {
 
   static Future<String> uploadGroupMessageImage(File file) async {
     Reference firebaseStorageRefrence = FirebaseStorage.instance.ref().child('GroupChat');
-    UploadTask uploadTask =
-        firebaseStorageRefrence.child('${DateTime.now().millisecondsSinceEpoch}${DateTime.now().microsecondsSinceEpoch}.jpg').putFile(file);
-    TaskSnapshot snap = await uploadTask.snapshot;
-    return await snap.ref.getDownloadURL();
+    TaskSnapshot taskSnapshot = await firebaseStorageRefrence.child('${DateTime.now().microsecondsSinceEpoch}.jpg').putFile(file);
+    String url = await taskSnapshot.ref.getDownloadURL();
+    return url;
   }
 }

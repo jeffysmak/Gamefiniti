@@ -110,7 +110,7 @@ class Common {
   static List<RadioModel> languageChoiceOptions() {
     List<RadioModel> genderOptions = List();
     genderOptions.add(RadioModel(false, 'English', 'English', true));
-    genderOptions.add(RadioModel(false, 'Hindi', 'Hindi', true));
+    genderOptions.add(RadioModel(false, 'Urdu', 'Urdu', true));
     genderOptions.add(RadioModel(false, 'Any', 'Any', true));
     return genderOptions;
   }
@@ -128,7 +128,7 @@ class Common {
   static List<String> languagePreference() {
     List<String> op = List();
     op.add('English');
-    op.add('Hindi');
+    op.add('Urdu');
     op.add('Any');
     return op;
   }
@@ -212,9 +212,7 @@ class Common {
     String httpRequest =
         "https://maps.googleapis.com/maps/api/geocode/json?latlng=${locationData.latitude},${locationData.longitude}&key=AIzaSyA6GOAzQpJQAu1weK5ggGWiQKY93c2e2yI";
     List<Address> addresses = List();
-    addresses = await Geocoder.local
-        .findAddressesFromCoordinates(Coordinates(locationData.latitude, locationData.longitude))
-        .catchError(
+    addresses = await Geocoder.local.findAddressesFromCoordinates(Coordinates(locationData.latitude, locationData.longitude)).catchError(
       (e) {
         // fetch from network....
       },
@@ -225,10 +223,8 @@ class Common {
   static List<OnBoardModel> getOnboardingItems() {
     List<OnBoardModel> list = List();
     list.add(OnBoardModel('assets/images/img1.png', 'Getting Bored', 'Are you getting bored and doing your stuff alone'));
-    list.add(OnBoardModel(
-        'assets/images/img2.png', 'Our KhelBuddy App', 'Use our khelbuddy app and post a request of your interest'));
-    list.add(OnBoardModel('assets/images/img3.png', 'Interested Partners',
-        'Find a nearby user with same interest and do your stuff together'));
+    list.add(OnBoardModel('assets/images/img2.png', 'Our Gamefiniti App', 'Use our Gamefiniti app and post a request of your interest'));
+    list.add(OnBoardModel('assets/images/img3.png', 'Interested Partners', 'Find a nearby user with same interest and do your stuff together'));
     return list;
   }
 }

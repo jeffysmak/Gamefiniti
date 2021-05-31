@@ -1,34 +1,33 @@
 {
   "project_info": {
-    "project_number": "694597329981",
-    "firebase_url": "https://khelbuddy-c2e8d.firebaseio.com",
-    "project_id": "khelbuddy-c2e8d",
-    "storage_bucket": "khelbuddy-c2e8d.appspot.com"
+    "project_number": "558950783416",
+    "project_id": "gamefiniti-af7a0",
+    "storage_bucket": "gamefiniti-af7a0.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:694597329981:android:d059fd4302dbc93254f654",
+        "mobilesdk_app_id": "1:558950783416:android:b5e0bb36bd760c763d174d",
         "android_client_info": {
-          "package_name": "com.indianapp"
+          "package_name": "com.gamefiniti"
         }
       },
       "oauth_client": [
         {
-          "client_id": "694597329981-s2nbfnl0anp4vj7te22a1s71r8p1gs98.apps.googleusercontent.com",
+          "client_id": "558950783416-c9611sk020933d792k052fqmqubfj3ml.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAt-iBlSULcatfYbZT6F6WHW5DQyP25RLE"
+          "current_key": "AIzaSyDT9CDxuGCS5MoGfTPIl90K3c4YKCTV1qQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "694597329981-s2nbfnl0anp4vj7te22a1s71r8p1gs98.apps.googleusercontent.com",
+              "client_id": "558950783416-c9611sk020933d792k052fqmqubfj3ml.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

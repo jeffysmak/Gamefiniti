@@ -68,7 +68,7 @@ class _SignupScreenState extends State<SignupScreen> {
         phoneFieldFocusNode.addListener(() {
           setState(() {
             if (phoneFieldFocusNode.hasFocus) {
-              prefixCode = '+91';
+              prefixCode = '+92';
             } else {
               if (_phoneFieldController.text.length == 0) {
                 prefixCode = '';
@@ -105,7 +105,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Image.asset(
-                      'assets/images/khelbuddy-logo.png',
+                      'assets/images/applogo.png',
                       width: 140,
                     ),
                     SizedBox(
@@ -453,7 +453,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   case 'Email/Google':
                   case 'Email/Facebook':
                     // insert to database
-                    AccountLinking.linkAccountWith(_registeringUser);
+                    // AccountLinking.linkAccountWith(_registeringUser);
                     FirestoreHelper.createUserInDatabase(_registeringUser, onCompleteCallbacks, merge: false);
                     break;
                   default:
@@ -469,7 +469,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 }
               } else {
                 // link provided email with phone authenticated user !
-                EmailPassAuthentication.linkWithEmalPass(_registeringUser);
+                // EmailPassAuthentication.linkWithEmalPass(_registeringUser);
                 FirestoreHelper.createUserInDatabase(_registeringUser, onCompleteCallbacks, merge: false);
               }
               setBusy(false);

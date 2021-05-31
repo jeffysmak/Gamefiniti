@@ -65,22 +65,16 @@ class GroupChatBubble extends StatelessWidget {
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Column(
-                            crossAxisAlignment: isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text(
-                                time,
-                                style: TextStyle(color: Colors.grey, fontSize: 12.0),
-                              ),
-                              SizedBox(
-                                height: 8,
-                              ),
-                              Text(
-                                message.message,
-                                style: TextStyle(color: Colors.black87, fontSize: 16.0),
-                              )
-                            ],
-                          )
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(time, style: TextStyle(color: Colors.grey, fontSize: 12.0)),
+                                SizedBox(height: 8),
+                                Text(message.message, style: TextStyle(color: Colors.black87, fontSize: 16.0)),
+                              ],
+                            ),
+                          ),
                         ],
                       ),
                     ),

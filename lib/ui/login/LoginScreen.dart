@@ -57,7 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Image.asset(
-                      'assets/images/khelbuddy-logo.png',
+                      'assets/images/applogo.png',
                       width: 140,
                     ),
                     SizedBox(
@@ -144,165 +144,165 @@ class _LoginScreenState extends State<LoginScreen> {
                       width: MediaQuery.of(context).size.width,
                     ),
                     SizedBox(height: 20.0),
-                    Container(
-                      margin: EdgeInsets.symmetric(horizontal: 20),
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: Divider(
-                              height: 1,
-                              color: Colors.black38,
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 16.0),
-                            child: Text('OR'),
-                          ),
-                          Expanded(
-                            child: Divider(
-                              height: 1,
-                              color: Colors.black38,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20.0,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          height: 50,
-                          child: RaisedButton(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(24),
-                            ),
-                            onPressed: () async {
-                              // authenticate use with google account
-                              UserCredential authResult = await GoogleAuthentication.authenticateWithGoogleAccount(
-                                user,
-                                (String cause) {
-                                  showSnackBar(cause, false);
-                                },
-                              );
-
-                              if (authResult != null && authResult.user != null) {
-                                // logged in/registered successfule
-                                user.email = authResult.user.email;
-                                // check is it existing user or not,
-                                FirestoreHelper.checkUserAlreadyExist(
-                                  user,
-                                  (bool exist) async {
-                                    if (exist) {
-                                      AppUser u = await FirestoreHelper.getUserFromData(authResult.user);
-                                      // navigate the user to dashboard
-                                      Navigator.pushAndRemoveUntil(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (ctx) => DashboardScreen(u),
-                                          ),
-                                              (route) => false);
-                                    } else {
-                                      // navigate the user to signup
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (ctx) => SignupScreen(signedInUser: user),
-                                        ),
-                                      );
-                                    }
-                                  },
-                                  FirestoreHelper.QUERY_EMAIL,
-                                );
-                              }
-                            },
-                            padding: EdgeInsets.all(12),
-                            color: Colors.white,
-                            child: Image.asset(
-                              'assets/images/google-icon.png',
-                            ),
-                          ),
-                          width: 50,
-                        ),
-                        SizedBox(
-                          width: 16,
-                        ),
-                        Container(
-                          height: 50,
-                          child: RaisedButton(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(24),
-                            ),
-                            onPressed: () async {
-                              UserCredential result = await FacebookAuthentication.AuthenticateUserWithFacebook(
-                                user,
-                                (String msg) {
-                                  showSnackBar(msg, false);
-                                },
-                              );
-                              if (result != null && result.user != null) {
-                                user.email = result.user.email;
-                                FirestoreHelper.checkUserAlreadyExist(
-                                  user,
-                                  (bool exist) async {
-                                    if (exist) {
-                                      AppUser u = await FirestoreHelper.getUserFromData(result.user);
-                                      // navigate the user to dashboard
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (ctx) => DashboardScreen(u),
-                                        ),
-                                      );
-                                    } else {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (ctx) => SignupScreen(signedInUser: user),
-                                        ),
-                                      );
-                                    }
-                                  },
-                                  FirestoreHelper.QUERY_EMAIL,
-                                );
-                              }
-                            },
-                            padding: EdgeInsets.all(12),
-                            color: Color(0xff3b5998),
-                            child: Image.asset(
-                              'assets/images/facebook-icon.png',
-                            ),
-                          ),
-                          width: 50,
-                        ),
-                        SizedBox(
-                          width: 16,
-                        ),
-                        Container(
-                          height: 50,
-                          child: RaisedButton(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(24),
-                            ),
-                            onPressed: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (ctx) => PhoneScreen()));
-                            },
-                            padding: EdgeInsets.all(12),
-                            color: Colors.orangeAccent,
-                            child: Icon(
-                              Icons.phone,
-                              color: Colors.white,
-                            ),
-                          ),
-                          width: 50,
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
+                    // Container(
+                    //   margin: EdgeInsets.symmetric(horizontal: 20),
+                    //   child: Row(
+                    //     children: [
+                    //       Expanded(
+                    //         child: Divider(
+                    //           height: 1,
+                    //           color: Colors.black38,
+                    //         ),
+                    //       ),
+                    //       Padding(
+                    //         padding: EdgeInsets.symmetric(horizontal: 16.0),
+                    //         child: Text('OR'),
+                    //       ),
+                    //       Expanded(
+                    //         child: Divider(
+                    //           height: 1,
+                    //           color: Colors.black38,
+                    //         ),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
+                    // SizedBox(
+                    //   height: 20.0,
+                    // ),
+                    // Row(
+                    //   mainAxisAlignment: MainAxisAlignment.center,
+                    //   children: [
+                    //     Container(
+                    //       height: 50,
+                    //       child: RaisedButton(
+                    //         shape: RoundedRectangleBorder(
+                    //           borderRadius: BorderRadius.circular(24),
+                    //         ),
+                    //         onPressed: () async {
+                    //           // authenticate use with google account
+                    //           UserCredential authResult = await GoogleAuthentication.authenticateWithGoogleAccount(
+                    //             user,
+                    //             (String cause) {
+                    //               showSnackBar(cause, false);
+                    //             },
+                    //           );
+                    //
+                    //           if (authResult != null && authResult.user != null) {
+                    //             // logged in/registered successfule
+                    //             user.email = authResult.user.email;
+                    //             // check is it existing user or not,
+                    //             FirestoreHelper.checkUserAlreadyExist(
+                    //               user,
+                    //               (bool exist) async {
+                    //                 if (exist) {
+                    //                   AppUser u = await FirestoreHelper.getUserFromData(authResult.user);
+                    //                   // navigate the user to dashboard
+                    //                   Navigator.pushAndRemoveUntil(
+                    //                       context,
+                    //                       MaterialPageRoute(
+                    //                         builder: (ctx) => DashboardScreen(u),
+                    //                       ),
+                    //                       (route) => false);
+                    //                 } else {
+                    //                   // navigate the user to signup
+                    //                   Navigator.push(
+                    //                     context,
+                    //                     MaterialPageRoute(
+                    //                       builder: (ctx) => SignupScreen(signedInUser: user),
+                    //                     ),
+                    //                   );
+                    //                 }
+                    //               },
+                    //               FirestoreHelper.QUERY_EMAIL,
+                    //             );
+                    //           }
+                    //         },
+                    //         padding: EdgeInsets.all(12),
+                    //         color: Colors.white,
+                    //         child: Image.asset(
+                    //           'assets/images/google-icon.png',
+                    //         ),
+                    //       ),
+                    //       width: 50,
+                    //     ),
+                    //     SizedBox(
+                    //       width: 16,
+                    //     ),
+                    //     Container(
+                    //       height: 50,
+                    //       child: RaisedButton(
+                    //         shape: RoundedRectangleBorder(
+                    //           borderRadius: BorderRadius.circular(24),
+                    //         ),
+                    //         onPressed: () async {
+                    //           UserCredential result = await FacebookAuthentication.AuthenticateUserWithFacebook(
+                    //             user,
+                    //             (String msg) {
+                    //               showSnackBar(msg, false);
+                    //             },
+                    //           );
+                    //           if (result != null && result.user != null) {
+                    //             user.email = result.user.email;
+                    //             FirestoreHelper.checkUserAlreadyExist(
+                    //               user,
+                    //               (bool exist) async {
+                    //                 if (exist) {
+                    //                   AppUser u = await FirestoreHelper.getUserFromData(result.user);
+                    //                   // navigate the user to dashboard
+                    //                   Navigator.push(
+                    //                     context,
+                    //                     MaterialPageRoute(
+                    //                       builder: (ctx) => DashboardScreen(u),
+                    //                     ),
+                    //                   );
+                    //                 } else {
+                    //                   Navigator.push(
+                    //                     context,
+                    //                     MaterialPageRoute(
+                    //                       builder: (ctx) => SignupScreen(signedInUser: user),
+                    //                     ),
+                    //                   );
+                    //                 }
+                    //               },
+                    //               FirestoreHelper.QUERY_EMAIL,
+                    //             );
+                    //           }
+                    //         },
+                    //         padding: EdgeInsets.all(12),
+                    //         color: Color(0xff3b5998),
+                    //         child: Image.asset(
+                    //           'assets/images/facebook-icon.png',
+                    //         ),
+                    //       ),
+                    //       width: 50,
+                    //     ),
+                    //     SizedBox(
+                    //       width: 16,
+                    //     ),
+                    //     Container(
+                    //       height: 50,
+                    //       child: RaisedButton(
+                    //         shape: RoundedRectangleBorder(
+                    //           borderRadius: BorderRadius.circular(24),
+                    //         ),
+                    //         onPressed: () {
+                    //           Navigator.push(context, MaterialPageRoute(builder: (ctx) => PhoneScreen()));
+                    //         },
+                    //         padding: EdgeInsets.all(12),
+                    //         color: Colors.orangeAccent,
+                    //         child: Icon(
+                    //           Icons.phone,
+                    //           color: Colors.white,
+                    //         ),
+                    //       ),
+                    //       width: 50,
+                    //     ),
+                    //   ],
+                    // ),
+                    // SizedBox(
+                    //   height: 20,
+                    // ),
                     Container(
                       padding: EdgeInsets.symmetric(vertical: 12),
                       child: Row(
@@ -409,7 +409,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Image.asset(
-                          'assets/images/khelbuddy-logo.png',
+                          'assets/images/applogo.png',
                           width: 140,
                         ),
                         SizedBox(
@@ -559,8 +559,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         } else {
                                           // navigate the user to signup
                                           if (kIsWeb) {
-                                            showSnackBar(
-                                                'You need to register your selft from KhelBuddy Mobile app.', false);
+                                            showSnackBar('You need to register your selft from KhelBuddy Mobile app.', false);
                                             FirebaseAuth.instance.signOut();
                                           } else {
                                             Navigator.push(
@@ -702,7 +701,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Image.asset('assets/images/khelbuddy-logo.png', width: 140),
+                        Image.asset('assets/images/applogo.png', width: 140),
                         SizedBox(
                           height: MediaQuery.of(context).size.height / 6,
                         ),
@@ -835,12 +834,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                               MaterialPageRoute(
                                                 builder: (ctx) => DashboardScreen(u),
                                               ),
-                                                  (route) => false);
+                                              (route) => false);
                                         } else {
                                           // navigate the user to signup
                                           if (kIsWeb) {
-                                            showSnackBar(
-                                                'You need to register your selft from KhelBuddy Mobile app.', false);
+                                            showSnackBar('You need to register your selft from KhelBuddy Mobile app.', false);
                                             FirebaseAuth.instance.signOut();
                                           } else {
                                             Navigator.push(
@@ -903,7 +901,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                                 MaterialPageRoute(
                                                   builder: (ctx) => DashboardScreen(u),
                                                 ),
-                                                    (route) => false);
+                                                (route) => false);
                                           } else {
                                             Navigator.push(
                                               context,
@@ -977,7 +975,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Image.asset(
-                      'assets/images/khelbuddy-logo.png',
+                      'assets/images/applogo.png',
                       width: 140,
                     ),
                     SizedBox(
@@ -1123,12 +1121,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                           MaterialPageRoute(
                                             builder: (ctx) => DashboardScreen(u),
                                           ),
-                                              (route) => false);
+                                          (route) => false);
                                     } else {
                                       // navigate the user to signup
                                       if (kIsWeb) {
-                                        showSnackBar(
-                                            'You need to register your selft from KhelBuddy Mobile app.', false);
+                                        showSnackBar('You need to register your selft from KhelBuddy Mobile app.', false);
                                         FirebaseAuth.instance.signOut();
                                       } else {
                                         Navigator.push(
@@ -1193,7 +1190,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                             MaterialPageRoute(
                                               builder: (ctx) => DashboardScreen(u),
                                             ),
-                                                (route) => false);
+                                            (route) => false);
                                       } else {
                                         Navigator.push(
                                           context,

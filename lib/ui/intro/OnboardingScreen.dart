@@ -77,8 +77,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     onTap: () {
                       setState(() {
                         currentIndex++;
-                        pageController.animateToPage(currentIndex,
-                            duration: Duration(milliseconds: 300), curve: Curves.bounceInOut);
+                        pageController.animateToPage(currentIndex, duration: Duration(milliseconds: 300), curve: Curves.bounceInOut);
                       });
                     },
                     child: Text('NEXT'),
@@ -122,8 +121,7 @@ class OnboardItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset(model.image,
-              width: MediaQuery.of(context).size.width, height: MediaQuery.of(context).size.height * 0.3),
+          Image.asset(model.image, width: MediaQuery.of(context).size.width, height: MediaQuery.of(context).size.height * 0.3),
           SizedBox(height: 20),
           Text(model.title, textAlign: TextAlign.center),
           SizedBox(height: 12),

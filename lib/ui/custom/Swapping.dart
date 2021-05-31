@@ -305,7 +305,7 @@ class _SwapItemState extends State<SwapItem> {
                                 Container(
                                   decoration: BoxDecoration(
                                     image: DecorationImage(
-                                      image: NetworkImage(request.user.displayPictureUrl),
+                                      image: NetworkImage(request!=null ? request.user.displayPictureUrl : ''),
                                       fit: BoxFit.cover,
                                     ),
                                   ),

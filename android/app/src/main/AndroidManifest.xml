@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.indianapp">
+    package="com.gamefiniti">
     <!-- io.flutter.app.FlutterApplication is an android.app.Application that
          calls FlutterMain.startInitialization(this); in its onCreate method.
          In most cases you can leave this as-is, but you if you want to provide
@@ -9,11 +9,10 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:icon="@mipmap/launcher_icon"
-        android:label="Khel Buddy">
+        android:label="Gamefiniti">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyA6GOAzQpJQAu1weK5ggGWiQKY93c2e2yI" />
@@ -38,9 +37,8 @@
             </intent-filter>
         </activity>
 
-
         <activity
-            android:name=".MainActivity"
+            android:name="com.gamefiniti.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
             android:launchMode="singleTop"

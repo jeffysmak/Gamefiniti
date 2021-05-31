@@ -39,7 +39,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   child: Container(
                     width: 200.0,
                     height: 200.0,
-                    child: Image.asset('assets/images/khelbuddy-logo.png'),
+                    child: Image.asset('assets/images/applogo.png'),
                   ),
                 ),
               ),

@@ -339,7 +339,7 @@ class _CustomeCommunityGroupListTileState extends State<CustomeCommunityGroupLis
                                   children: [
                                     Icon(Icons.check_circle, color: Colors.greenAccent),
                                     SizedBox(width: 6),
-                                    TitleText(text: 'Successfuly joined'),
+                                    Expanded(child: TitleText(text: 'Successfuly joined')),
                                   ],
                                 ),
                                 content: Text('Congratulation ! you are now a momber of community group ${widget.communityGroup.title}',

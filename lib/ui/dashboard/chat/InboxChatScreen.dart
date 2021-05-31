@@ -81,7 +81,7 @@ class _InboxChatScreenState extends State<InboxChatScreen> {
                           return ListView.builder(
                             itemBuilder: (ctx, index) {
                               DocumentSnapshot docSnap = snapshot.data.docs[index];
-                              ChatMessage message = ChatMessage.fromMap(docSnap.data);
+                              ChatMessage message = ChatMessage.fromMap(docSnap.data());
                               return Bubble(
                                 fromGroup: false,
                                 isMe: isMe(message),

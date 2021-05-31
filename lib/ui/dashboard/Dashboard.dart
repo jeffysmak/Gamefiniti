@@ -34,14 +34,16 @@ class _DashboardScreenState extends State<DashboardScreen> {
     });
   }
 
-  List<Widget> subScreens() => [
+  List<Widget> subScreens() =>
+      [
         HomeScreen(signedInUser: signedInUser, onRequestPosted: onRequestSubmittedListener),
         ExploreScreen(signedInUser),
         InboxListScreen(signedInUser),
         GroupsScreen(signedInUser),
       ];
 
-  List<Widget> WebsubScreens() => [
+  List<Widget> WebsubScreens() =>
+      [
         ExploreScreen(signedInUser),
         InboxListScreen(signedInUser),
         GroupsScreen(signedInUser),
@@ -60,7 +62,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     });
     FirestoreHelper.getNotificationList(
       signedInUser,
-      (NotificationModel model) {
+          (NotificationModel model) {
         setState(() {
           notifications.add(model);
         });
@@ -76,12 +78,21 @@ class _DashboardScreenState extends State<DashboardScreen> {
         builder: (ctx, constraints) {
           if (constraints.maxWidth > 1200) {
             return Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
+              width: MediaQuery
+                  .of(context)
+                  .size
+                  .width,
+              height: MediaQuery
+                  .of(context)
+                  .size
+                  .height,
               child: Row(
                 children: [
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.45,
+                    width: MediaQuery
+                        .of(context)
+                        .size
+                        .width * 0.45,
                   ),
                   Expanded(
                     child: Padding(
@@ -111,7 +122,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                     crossAxisAlignment: CrossAxisAlignment.center,
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Image.asset('assets/images/khelbuddy-logo.png', width: 100),
+                                      Image.asset('assets/images/applogo.png', width: 100),
                                       CircleImageInkWell(
                                         onPressed: () {
                                           print('onPressed');
@@ -138,11 +149,20 @@ class _DashboardScreenState extends State<DashboardScreen> {
             );
           } else if (constraints.maxWidth > 880 && constraints.maxWidth <= 1200) {
             return Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
+              width: MediaQuery
+                  .of(context)
+                  .size
+                  .width,
+              height: MediaQuery
+                  .of(context)
+                  .size
+                  .height,
               child: Row(
                 children: [
-                  Container(width: MediaQuery.of(context).size.width * 0.15, color: Colors.orange),
+                  Container(width: MediaQuery
+                      .of(context)
+                      .size
+                      .width * 0.15, color: Colors.orange),
                   Expanded(
                     child: Scaffold(
                       backgroundColor: Colors.white,
@@ -168,7 +188,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Image.asset('assets/images/khelbuddy-logo.png', width: 100),
+                                  Image.asset('assets/images/applogo.png', width: 100),
                                   CircleImageInkWell(
                                     onPressed: () {
                                       print('onPressed');
@@ -216,7 +236,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Image.asset('assets/images/khelbuddy-logo.png', width: 100),
+                          Image.asset('assets/images/applogo.png', width: 100),
                           CircleImageInkWell(
                             onPressed: () {
                               print('onPressed');
@@ -307,7 +327,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Image.asset('assets/images/khelbuddy-logo.png', width: 100),
+                        Image.asset('assets/images/applogo.png', width: 100),
                         Expanded(
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
@@ -404,21 +424,21 @@ class _DashboardScreenState extends State<DashboardScreen> {
             icon: _currentIndex == 2
                 ? Icon(Icons.mail)
                 : notifications.length > 0
-                    ? Stack(
-                        children: [
-                          Icon(Icons.mail),
-                          Positioned(
-                            child: Container(
-                              width: 8,
-                              height: 8,
-                              decoration: BoxDecoration(color: Colors.redAccent, shape: BoxShape.circle),
-                            ),
-                            top: 0,
-                            right: 0,
-                          ),
-                        ],
-                      )
-                    : Icon(Icons.mail),
+                ? Stack(
+              children: [
+                Icon(Icons.mail),
+                Positioned(
+                  child: Container(
+                    width: 8,
+                    height: 8,
+                    decoration: BoxDecoration(color: Colors.redAccent, shape: BoxShape.circle),
+                  ),
+                  top: 0,
+                  right: 0,
+                ),
+              ],
+            )
+                : Icon(Icons.mail),
             title: Text('Inbox'),
           ),
           new BottomNavigationBarItem(
@@ -449,21 +469,21 @@ class _DashboardScreenState extends State<DashboardScreen> {
             icon: _currentIndex == 2
                 ? Icon(Icons.mail)
                 : notifications.length > 0
-                    ? Stack(
-                        children: [
-                          Icon(Icons.mail),
-                          Positioned(
-                            child: Container(
-                              width: 8,
-                              height: 8,
-                              decoration: BoxDecoration(color: Colors.redAccent, shape: BoxShape.circle),
-                            ),
-                            top: 0,
-                            right: 0,
-                          ),
-                        ],
-                      )
-                    : Icon(Icons.mail),
+                ? Stack(
+              children: [
+                Icon(Icons.mail),
+                Positioned(
+                  child: Container(
+                    width: 8,
+                    height: 8,
+                    decoration: BoxDecoration(color: Colors.redAccent, shape: BoxShape.circle),
+                  ),
+                  top: 0,
+                  right: 0,
+                ),
+              ],
+            )
+                : Icon(Icons.mail),
             title: Text('Inbox'),
           ),
           new BottomNavigationBarItem(
@@ -482,17 +502,18 @@ class _DashboardScreenState extends State<DashboardScreen> {
       });
     } else {
       return showDialog(
-            context: context,
-            builder: (context) => new AlertDialog(
-              title: new Text('Are you sure?'),
-              content: new Text('Do you want to exit from App'),
-              actions: <Widget>[
-                new FlatButton(onPressed: () => Navigator.of(context).pop(false), child: Text("NO")),
-                SizedBox(height: 16),
-                new FlatButton(onPressed: () => Navigator.of(context).pop(true), child: Text("YES")),
-              ],
-            ),
-          ) ??
+        context: context,
+        builder: (context) =>
+        new AlertDialog(
+          title: new Text('Are you sure?'),
+          content: new Text('Do you want to exit from App'),
+          actions: <Widget>[
+            new FlatButton(onPressed: () => Navigator.of(context).pop(false), child: Text("NO")),
+            SizedBox(height: 16),
+            new FlatButton(onPressed: () => Navigator.of(context).pop(true), child: Text("YES")),
+          ],
+        ),
+      ) ??
           false;
     }
   }

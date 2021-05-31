@@ -92,7 +92,7 @@ class _CommunityGroupScreenState extends State<CommunityGroupScreen> {
                   return ListView.builder(
                     itemBuilder: (ctx, index) {
                       DocumentSnapshot docSnap = data.data.docs[index];
-                      GroupChatMessage message = GroupChatMessage.fromMap(docSnap.data);
+                      GroupChatMessage message = GroupChatMessage.fromMap(docSnap.data());
                       return message.type == 0
                           ? GroupChatBubble(
                               fromGroup: true,
